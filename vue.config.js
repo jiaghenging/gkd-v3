@@ -3,6 +3,7 @@ const publicPath = process.env.VUE_APP_PUBLIC_PATH || './';
 function resolve(dir){
     return path.join(__dirname,dir)//path.join(__dirname)设置绝对路径
 }
+
 module.exports={
    lintOnSave: false,
     chainWebpack:(config)=>{
