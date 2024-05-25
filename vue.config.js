@@ -16,5 +16,6 @@ module.exports={
         .set('network',resolve('./src/network'))
         //注意 store 和 router 没必要配置　　
     }
+    
 
 }
