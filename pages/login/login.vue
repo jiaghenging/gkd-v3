@@ -4,7 +4,7 @@
 			<!-- 这里是状态栏 -->
 		</view>
 		<view class="fixed-bg">
-			<video id="homevideo" object-fit="cover" autoplay="autoplay" loop="loop" muted="muted"
+			<video id="homevideo" :ref="videoRef" object-fit="cover" :autoplay="true" loop="loop" :muted="true"
 				src="../../static/img/bg_login.mp4" :controls="false" class="fixed-video"></video>
 		</view>
 		<view class="login_container">
@@ -52,48 +52,61 @@
 	import {
 		login
 	} from '../../api/index.js'
-import { onMounted, reactive, ref } from "vue";
-	const rules = {
-		// 对name字段进行必填验证
-		userId: {
-			rules: [{
-					required: true,
-					errorMessage: '请输入姓名',
-				},
-				{
-					minLength: 3,
-					maxLength: 15,
-					errorMessage: '姓名长度在 {minLength} 到 {maxLength} 个字符',
-				}
-			]
-		},
-		// 对email字段进行必填验证
-		userPwd: {
-			rules: [{
-					required: true,
-					errorMessage: '请输入密码',
-				},
-				{
-					minLength: 6,
-					maxLength: 14,
-					errorMessage: '密码长度在 {minLength} 到 {maxLength} 个字符',
-				}
-			]
+	import {
+		onMounted,
+		reactive,
+		ref
+	} from "vue";
+	import { onShow, onHide,onLoad } from "@dcloudio/uni-app"
+	const videoRef=ref('')
+	onShow(()=>{
+		console.log(videoRef.value);
+	})
+	onMounted(()=>{
+		console.log(videoRef.value);
+	})
+		const rules = {
+			// 对name字段进行必填验证
+			userId: {
+				rules: [{
+						required: true,
+						errorMessage: '请输入姓名',
+					},
+					{
+						minLength: 3,
+						maxLength: 15,
+						errorMessage: '姓名长度在 {minLength} 到 {maxLength} 个字符',
+					}
+				]
+			},
+			// 对email字段进行必填验证
+			userPwd: {
+				rules: [{
+						required: true,
+						errorMessage: '请输入密码',
+					},
+					{
+						minLength: 6,
+						maxLength: 14,
+						errorMessage: '密码长度在 {minLength} 到 {maxLength} 个字符',
+					}
+				]
+			}
 		}
-	}
-	const rulesData=ref('');
+	const rulesData = ref('');
+
+	const userForm = reactive({
+		userId: '',
+		userPwd: ''
+	});
 	
-	const userForm=reactive({
-					userId: '',
-					userPwd: ''
-				});
-	function toLogin(){
+	function toLogin() {
 		let data = {
 			userid: userForm.userId,
 			userpwd: userForm.userPwd,
 			username: '未设置昵称'
 		};
-		login(data).then(res=>{
+		login(data).then(res => {
 			console.log(res);
 			if (res.data.state == 0) {
 				uni.showToast({
@@ -118,20 +131,21 @@ import { onMounted, reactive, ref } from "vue";
 						}, 1500);
 					}
 				})
-			
+
 			}
-		}).catch(err=>{
+		}).catch(err => {
 			login(err)
 		})
 	}
-	const formRef=ref(null);
-	const ifAgree=ref(false);
-	function checkForm(){
+	const formRef = ref(null);
+	const ifAgree = ref(false);
+
+	function checkForm() {
 		console.log(formRef.value);
 		if (ifAgree.value) {
 			formRef.value.validate().then(res => {
 				toLogin();
-		
+
 			}).catch(err => {
 				console.log('失败：', err);
 			})
@@ -143,7 +157,7 @@ import { onMounted, reactive, ref } from "vue";
 			})
 		}
 	}
-	onMounted(()=>{
+	onMounted(() => {
 		uni.getStorage({
 			key: 'user_msg',
 			success: function(res) {
