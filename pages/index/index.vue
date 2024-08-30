@@ -1,5 +1,8 @@
 <template>
 	<view class="content">
+		<view class="status_bar">
+			<!-- 这里是状态栏 -->
+		</view>
 		<view class="bgBox">
 			<view class="zzc"></view>
 			<image class="bg-img" src="../../static/img/bg_login.jpg"></image>
@@ -241,7 +244,7 @@
 				userid: userMsg.value.userid
 			}).then(res => {
 				console.log(res)
-				if (res.data.state == 0) {
+				if (res.code == 200) {
 					resolve(true)
 				} else {
 					reject(false)
@@ -283,7 +286,7 @@
 				userid: userMsg.value.userid
 			}).then(res => {
 				console.log(res);
-				if (res.data.state == 0 && res.data.data.yystate == 0) {
+				if (res.code == 200 && res.data.data.yystate == 0) {
 					resolve(0)
 				} else {
 					reject(1)
@@ -333,7 +336,7 @@
 				userid: userMsg.value.userid
 			}).then(res => {
 				console.log(res);
-				if (res.data.state == 0) {
+				if (res.code == 200) {
 					user_yystate.value = 1;
 					wb.send({
 						data: JSON.stringify({
@@ -375,7 +378,7 @@
 		//获取预约列表
 		getMsg('/getyylist').then((res) => {
 			console.log(res);
-			if (res.data.state == 0) {
+			if (res.code == 200) {
 				let gmsg = res.data.data;
 				gmsg.forEach((item, index) => {
 					for (let i = 0; i < item.teammsg.length; i++) {
@@ -401,6 +404,6 @@
 	// }
 </script>
 
-<style>
-	@import url('../../static/css/index/index.css');
+<style lang="scss">
+	@import '../../static/css/index/index.scss';
 </style>

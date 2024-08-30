@@ -21,8 +21,8 @@
 </script>
 
 <style lang="scss">
-	@import 'static/css/public/iconfont.css';
-	@import 'static/css/public/public.css';
+	@import '@/static/css/iconfonts/iconfont.css';
+	@import 'static/css/public/public.scss';
 	/*每个页面公共css */
 	uni-page-body,page {
 		height:100%

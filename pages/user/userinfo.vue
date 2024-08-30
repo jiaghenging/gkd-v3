@@ -1,5 +1,8 @@
 <template>
 	<view>
+		<view class="status_bar">
+			<!-- 这里是状态栏 -->
+		</view>
 		<text>个人中心</text>
 		<view @tap="loginOut()">退出登录</view>
 	</view>
@@ -33,6 +36,7 @@
 								
 							}
 						})
+						uni.setStorageSync('Authorization', '')
 					}
 				})
 			}

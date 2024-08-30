@@ -1315,23 +1315,24 @@ if (uni.restoreGlobal) {
     let header = {
       "content-type": "application/json"
     };
+    let token = uni.getStorageSync("Authorization");
+    if (token) {
+      formatAppLog("log", "at utils/request.js:10", "token", token);
+      header.Authorization = token;
+    }
     return new Promise((resolve, reject) => {
       let fullUrl = url_config + url;
-      formatAppLog("log", "at utils/request.js:12", "fullurl", fullUrl);
-      formatAppLog("log", "at utils/request.js:13", "method", method);
-      formatAppLog("log", "at utils/request.js:14", "data", data);
-      formatAppLog("log", "at utils/request.js:15", "ttt", uni.request());
       uni.request({
         url: fullUrl,
         data,
         method,
         header,
         success: (res) => {
-          formatAppLog("log", "at utils/request.js:24", "11111");
+          formatAppLog("log", "at utils/request.js:21", "11111");
           resolve(res.data);
         },
         fail: (err) => {
-          formatAppLog("log", "at utils/request.js:28", "2222");
+          formatAppLog("log", "at utils/request.js:25", "2222");
           reject(err);
         }
       });
@@ -1398,7 +1399,7 @@ if (uni.restoreGlobal) {
         };
         login(data).then((res) => {
           formatAppLog("log", "at pages/login/login.vue:107", res);
-          if (res.state == 0) {
+          if (res.code == 200) {
             uni.showToast({
               title: "登录成功",
               duration: 1500,
@@ -2444,14 +2445,14 @@ if (uni.restoreGlobal) {
             haveNew.value = true;
             msgnum.value = res.data.length;
             messageList.value = res.data;
-            formatAppLog("log", "at pages/index/index.vue:170", messageList.value);
+            formatAppLog("log", "at pages/index/index.vue:173", messageList.value);
           }
         });
       };
       const ifMaster = function() {
         let ifhase = false;
         groupMsg.value.forEach((item, index) => {
-          formatAppLog("log", "at pages/index/index.vue:186", item.master.masterid);
+          formatAppLog("log", "at pages/index/index.vue:189", item.master.masterid);
           if (item.master.masterid == userMsg.value.userid) {
             ifhase = true;
           }
@@ -2469,7 +2470,7 @@ if (uni.restoreGlobal) {
         for (let i = 0; i < tmsg_json.length; i++) {
           tmsg_json[i] = JSON.stringify(tmsg_json[i]);
         }
-        formatAppLog("log", "at pages/index/index.vue:204", tmsg_json);
+        formatAppLog("log", "at pages/index/index.vue:207", tmsg_json);
         uni.showModal({
           title: "提示",
           content: "确认退出该预约?",
@@ -2477,7 +2478,7 @@ if (uni.restoreGlobal) {
             if (res.confirm) {
               let outYyP = sureOutYy(JSON.stringify(tmsg_json), currentYyid);
               outYyP.then((outres) => {
-                formatAppLog("log", "at pages/index/index.vue:212", outres);
+                formatAppLog("log", "at pages/index/index.vue:215", outres);
                 user_yystate.value = 0;
                 groupMsg[currentYyIndex].teammsg = tmsg;
                 wb.send({
@@ -2496,7 +2497,7 @@ if (uni.restoreGlobal) {
                 });
               });
             } else if (res.cancel) {
-              formatAppLog("log", "at pages/index/index.vue:231", "用户点击取消");
+              formatAppLog("log", "at pages/index/index.vue:234", "用户点击取消");
             }
           }
         });
@@ -2508,8 +2509,8 @@ if (uni.restoreGlobal) {
             yyid,
             userid: userMsg.value.userid
           }).then((res) => {
-            formatAppLog("log", "at pages/index/index.vue:243", res);
-            if (res.data.state == 0) {
+            formatAppLog("log", "at pages/index/index.vue:246", res);
+            if (res.code == 200) {
               resolve(true);
             } else {
               reject(false);
@@ -2548,8 +2549,8 @@ if (uni.restoreGlobal) {
           postMsg("/getyystate", {
             userid: userMsg.value.userid
           }).then((res) => {
-            formatAppLog("log", "at pages/index/index.vue:285", res);
-            if (res.data.state == 0 && res.data.data.yystate == 0) {
+            formatAppLog("log", "at pages/index/index.vue:288", res);
+            if (res.code == 200 && res.data.data.yystate == 0) {
               resolve(0);
             } else {
               reject(1);
@@ -2568,7 +2569,7 @@ if (uni.restoreGlobal) {
             if (res.confirm) {
               sureJoin(groupId, masterId);
             } else if (res.cancel) {
-              formatAppLog("log", "at pages/index/index.vue:305", "用户点击取消");
+              formatAppLog("log", "at pages/index/index.vue:308", "用户点击取消");
             }
           }
         });
@@ -2598,8 +2599,8 @@ if (uni.restoreGlobal) {
             teammsg: JSON.stringify(tmsg),
             userid: userMsg.value.userid
           }).then((res2) => {
-            formatAppLog("log", "at pages/index/index.vue:335", res2);
-            if (res2.data.state == 0) {
+            formatAppLog("log", "at pages/index/index.vue:338", res2);
+            if (res2.code == 200) {
               user_yystate.value = 1;
               wb.send({
                 data: JSON.stringify({
@@ -2636,8 +2637,8 @@ if (uni.restoreGlobal) {
       };
       const getYyList = function() {
         getMsg("/getyylist").then((res) => {
-          formatAppLog("log", "at pages/index/index.vue:377", res);
-          if (res.data.state == 0) {
+          formatAppLog("log", "at pages/index/index.vue:380", res);
+          if (res.code == 200) {
             let gmsg = res.data.data;
             gmsg.forEach((item, index) => {
               for (let i = 0; i < item.teammsg.length; i++) {
@@ -2652,6 +2653,9 @@ if (uni.restoreGlobal) {
       return (_ctx, _cache) => {
         const _component_uni_popup = resolveEasycom(vue.resolveDynamicComponent("uni-popup"), __easycom_0);
         return vue.openBlock(), vue.createElementBlock("view", { class: "content" }, [
+          vue.createElementVNode("view", { class: "status_bar" }, [
+            vue.createCommentVNode(" 这里是状态栏 ")
+          ]),
           vue.createElementVNode("view", { class: "bgBox" }, [
             vue.createElementVNode("view", { class: "zzc" }),
             vue.createElementVNode("image", {
@@ -2835,10 +2839,11 @@ if (uni.restoreGlobal) {
                     url: "/pages/login/login"
                   });
                 } else if (res.cancel) {
-                  formatAppLog("log", "at pages/user/userinfo.vue:31", "用户点击取消");
+                  formatAppLog("log", "at pages/user/userinfo.vue:34", "用户点击取消");
                 }
               }
             });
+            uni.setStorageSync("Authorization", "");
           }
         });
       }
@@ -2846,6 +2851,9 @@ if (uni.restoreGlobal) {
   };
   function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", null, [
+      vue.createElementVNode("view", { class: "status_bar" }, [
+        vue.createCommentVNode(" 这里是状态栏 ")
+      ]),
       vue.createElementVNode("text", null, "个人中心"),
       vue.createElementVNode("view", {
         onClick: _cache[0] || (_cache[0] = ($event) => $options.loginOut())

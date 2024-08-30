@@ -21,11 +21,7 @@
   z-index: 1; /* 确保表单位于视频上面 */
   /* 可以根据需要添加表单的样式 */
 }
-.status_bar {
-		height: var(--status-bar-height);
-		width: 100%;
-		background-color: #fff;
-	}
+
 .content{
 	position: relative;
 	width: 100%;
@@ -33,6 +29,7 @@
 	overflow: hidden;
 	background-color: #000;
 }
+
 .bgImg{
 	width: 100%;
 	height: auto;

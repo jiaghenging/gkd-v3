@@ -1,0 +1,51 @@
+{
+  "id": "3938872",
+  "name": "gkd",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "搞快点app",
+  "glyphs": [
+    {
+      "icon_id": "5387522",
+      "name": "关闭",
+      "font_class": "guanbi",
+      "unicode": "eaf2",
+      "unicode_decimal": 60146
+    },
+    {
+      "icon_id": "3996123",
+      "name": "消息",
+      "font_class": "xiaoxi",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "10357047",
+      "name": "退出",
+      "font_class": "tuichu",
+      "unicode": "e69e",
+      "unicode_decimal": 59038
+    },
+    {
+      "icon_id": "12732490",
+      "name": "创建",
+      "font_class": "chuangjian",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "5387527",
+      "name": "加号",
+      "font_class": "jiahao",
+      "unicode": "eaf3",
+      "unicode_decimal": 60147
+    },
+    {
+      "icon_id": "18360879",
+      "name": "check",
+      "font_class": "check",
+      "unicode": "e764",
+      "unicode_decimal": 59236
+    }
+  ]
+}

@@ -4,9 +4,9 @@
 /* 水平间距 */
 @font-face {
   font-family: "iconfont"; /* Project id 3938872 */
-  src: url('//at.alicdn.com/t/c/font_3938872_1kbykxaoavl.woff2?t=1681351384760') format('woff2'),
-       url('//at.alicdn.com/t/c/font_3938872_1kbykxaoavl.woff?t=1681351384760') format('woff'),
-       url('//at.alicdn.com/t/c/font_3938872_1kbykxaoavl.ttf?t=1681351384760') format('truetype');
+  src: url('static/css/iconfonts/iconfont.woff2?t=1725010983473') format('woff2'),
+       url('static/css/iconfonts/iconfont.woff?t=1725010983473') format('woff'),
+       url('static/css/iconfonts/iconfont.ttf?t=1725010983473') format('truetype');
 }
 .iconfont {
   font-family: "iconfont" !important;
@@ -33,14 +33,19 @@
 .icon-check:before {
   content: "\e764";
 }
+.uni-page-head .uni-page-head-ft {
+  padding: 0 14px !important;
+}
+.status_bar {
+  height: var(--status-bar-height);
+  width: 100%;
+  background-color: #fff;
+}
 .formBox .uni-forms-item__error {
   left: 7% !important;
 }
 .formBox_yy .uni-forms-item__error {
   left: 0;
-}
-.uni-page-head .uni-page-head-ft {
-  padding: 0 14px !important;
 }
 /*每个页面公共css */
 uni-page-body, body {

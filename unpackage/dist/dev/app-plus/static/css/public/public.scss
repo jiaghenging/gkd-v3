@@ -1,4 +1,9 @@
 
+.status_bar {
+		height: var(--status-bar-height);
+		width: 100%;
+		background-color: #fff;
+	}
 .formBox{
 	.uni-forms-item__error{
 		left: 7%!important;

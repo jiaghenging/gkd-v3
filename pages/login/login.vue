@@ -105,7 +105,7 @@
 		};
 		login(data).then(res => {
 			console.log(res);
-			if (res.state == 0) {
+			if (res.code == 200) {
 				uni.showToast({
 					title: '登录成功',
 					duration: 1500,
