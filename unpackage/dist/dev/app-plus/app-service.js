@@ -1312,18 +1312,26 @@ if (uni.restoreGlobal) {
   const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$5], ["__scopeId", "data-v-9a1e3c32"], ["__file", "E:/jhstudy/gkd-v3/uni_modules/uni-forms/components/uni-forms/uni-forms.vue"]]);
   let url_config = "http://192.168.0.43:8090";
   function request(url, method, data) {
-    formatAppLog("log", "at utils/request.js:3", "url", url);
+    let header = {
+      "content-type": "application/json"
+    };
     return new Promise((resolve, reject) => {
       let fullUrl = url_config + url;
-      formatAppLog("log", "at utils/request.js:6", fullUrl);
+      formatAppLog("log", "at utils/request.js:12", "fullurl", fullUrl);
+      formatAppLog("log", "at utils/request.js:13", "method", method);
+      formatAppLog("log", "at utils/request.js:14", "data", data);
+      formatAppLog("log", "at utils/request.js:15", "ttt", uni.request());
       uni.request({
         url: fullUrl,
-        method,
         data,
+        method,
+        header,
         success: (res) => {
+          formatAppLog("log", "at utils/request.js:24", "11111");
           resolve(res.data);
         },
         fail: (err) => {
+          formatAppLog("log", "at utils/request.js:28", "2222");
           reject(err);
         }
       });
@@ -1341,10 +1349,10 @@ if (uni.restoreGlobal) {
     setup(__props) {
       const videoRef = vue.ref("");
       onShow(() => {
-        formatAppLog("log", "at pages/login/login.vue:63", videoRef.value);
+        formatAppLog("log", "at pages/login/login.vue:59", videoRef.value);
       });
       vue.onMounted(() => {
-        formatAppLog("log", "at pages/login/login.vue:66", videoRef.value);
+        formatAppLog("log", "at pages/login/login.vue:62", videoRef.value);
       });
       const rules = {
         // 对name字段进行必填验证
@@ -1378,18 +1386,18 @@ if (uni.restoreGlobal) {
       };
       vue.ref("");
       const userForm = vue.reactive({
-        userId: "",
-        userPwd: ""
+        userId: "admin",
+        userPwd: "admin123"
       });
       function toLogin() {
-        formatAppLog("log", "at pages/login/login.vue:104", "ssss");
+        formatAppLog("log", "at pages/login/login.vue:100", "ssss");
         let data = {
           userid: userForm.userId,
           userpwd: userForm.userPwd,
           username: "未设置昵称"
         };
         login(data).then((res) => {
-          formatAppLog("log", "at pages/login/login.vue:111", res);
+          formatAppLog("log", "at pages/login/login.vue:107", res);
           if (res.state == 0) {
             uni.showToast({
               title: "登录成功",
@@ -1406,7 +1414,7 @@ if (uni.restoreGlobal) {
               key: "Authorization",
               data: res.token,
               success() {
-                formatAppLog("log", "at pages/login/login.vue:128", "成功保存");
+                formatAppLog("log", "at pages/login/login.vue:124", "成功保存");
               }
             });
             uni.setStorage({
@@ -1422,18 +1430,18 @@ if (uni.restoreGlobal) {
             });
           }
         }).catch((err) => {
-          formatAppLog("log", "at pages/login/login.vue:145", err);
+          formatAppLog("log", "at pages/login/login.vue:141", err);
         });
       }
       const formRef = vue.ref(null);
-      const ifAgree = vue.ref(false);
+      const ifAgree = vue.ref(true);
       function checkForm() {
-        formatAppLog("log", "at pages/login/login.vue:152", formRef.value);
+        formatAppLog("log", "at pages/login/login.vue:148", formRef.value);
         if (ifAgree.value) {
           formRef.value.validate().then((res) => {
             toLogin();
           }).catch((err) => {
-            formatAppLog("log", "at pages/login/login.vue:158", "失败：", err);
+            formatAppLog("log", "at pages/login/login.vue:154", "失败：", err);
           });
         } else {
           uni.showToast({
@@ -1462,7 +1470,6 @@ if (uni.restoreGlobal) {
           vue.createElementVNode("view", { class: "status_bar" }, [
             vue.createCommentVNode(" 这里是状态栏 ")
           ]),
-          vue.createCommentVNode(' 		<view class="fixed-bg">\n			<image src="../../static/img/bg_login.gif" class="bgImg" mode=""></image>\r\n			\n		</view> '),
           vue.createElementVNode("view", { class: "login_container" }, [
             vue.createElementVNode("view", { class: "formBox" }, [
               vue.createElementVNode("text", { class: "login_title" }, "Hi , 你好啊"),

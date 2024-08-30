@@ -97,11 +97,18 @@
 .uni-page-head .uni-page-head-ft[data-v-9a1e3c32] {
   padding: 0 14px !important;
 }
+/* 水平间距 */
+/* 水平间距 */
+.uni-page-head .uni-page-head-ft {
+  padding: 0 14px !important;
+}
 .container {
   position: relative;
   width: 100%;
-  height: 100vh; /* 让容器充满整个视口 */
-  overflow: hidden; /* 隐藏视频溢出部分 */
+  height: 100vh;
+  /* 让容器充满整个视口 */
+  overflow: hidden;
+  /* 隐藏视频溢出部分 */
   flex: 1;
 }
 .video-background {
@@ -110,163 +117,168 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 让视频铺满整个容器 */
-  z-index: -1; /* 将视频放到背景，-1是为了让表单位于视频上面 */
+  object-fit: cover;
+  /* 让视频铺满整个容器 */
+  z-index: -1;
+  /* 将视频放到背景，-1是为了让表单位于视频上面 */
 }
 .login-form {
-  position: relative; /* 默认即可，因为表单在文档流中 */
-  z-index: 1; /* 确保表单位于视频上面 */
+  position: relative;
+  /* 默认即可，因为表单在文档流中 */
+  z-index: 1;
+  /* 确保表单位于视频上面 */
   /* 可以根据需要添加表单的样式 */
 }
 .status_bar {
-		height: var(--status-bar-height);
-		width: 100%;
-		background-color: #fff;
+  height: var(--status-bar-height);
+  width: 100%;
+  background-color: #fff;
 }
-.content{
-	position: relative;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	background-color: #000;
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #000;
 }
-.bgImg{
-	width: 100%;
-	height: auto;
+.bgImg {
+  width: 100%;
+  height: auto;
 }
-.fixed-bg{
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	z-index: -1;
+.fixed-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
-.fixed-video{
-	width: 100%;
-	height: 100%;
+.fixed-video {
+  width: 100%;
+  height: 100%;
 }
-.login_container{
-	position: fixed;
-	background-image: url('../../static/img/bg_login.gif');
-	background-size: contain; /* 或 background-size: auto; */
-	  background-position: center;
-	  background-repeat: no-repeat;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 899;
+.login_container {
+  position: fixed;
+  background-image: url("../../static/img/bg_login.gif");
+  background-size: contain;
+  /* 或 background-size: auto; */
+  background-position: center;
+  background-repeat: no-repeat;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 899;
 }
-.formBox{
-	position: absolute;
-	left: 50%;
-	top: 30%;
-	transform: translate(-50%,0);
-	display: flex;
-	flex-direction: column;
+.formBox {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, 0);
+  display: flex;
+  flex-direction: column;
 }
-.login_title{
-	color: #fff;
-	font-weight: bold;
-	letter-spacing: 0.125rem;
-	font-size: 1.25rem;
-	text-align: center;
+.login_title {
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.125rem;
+  font-size: 1.25rem;
+  text-align: center;
 }
-.login_form{
-	margin-top: 3.125rem;
+.login_form {
+  margin-top: 3.125rem;
 }
-.inputBox{
-	width: 12.5rem;
-	height: 1.875rem;
-	background-color: rgba(255,255,255,0.2);
-	border-radius:20px;
-	margin-bottom: 0;
->uni-input{
-		width: 100%;
-		height: 100%;
-		padding-left: 20px;
-		font-size: 0.625rem;
-		color: #fff;
+.inputBox {
+  width: 12.5rem;
+  height: 1.875rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  margin-bottom: 0;
 }
+.inputBox > uni-input {
+  width: 100%;
+  height: 100%;
+  padding-left: 20px;
+  font-size: 0.625rem;
+  color: #fff;
 }
-.input_style{
-	font-size: 0.625rem;
+.input_style {
+  font-size: 0.625rem;
 }
-.form_agrement{
-	padding-bottom: 1.25rem;
-	display: flex;
+.form_agrement {
+  padding-bottom: 1.25rem;
+  display: flex;
 }
-.login_btn{
-	width: 12.5rem;
-	height: 1.875rem;
-	background-color: rgb(152,144,254);
-	border-radius:20px;
-	text-align: center;
-	line-height: 1.875rem;
-	color:rgba(255,255,255,0.7);
-	font-size: 0.625rem;
+.login_btn {
+  width: 12.5rem;
+  height: 1.875rem;
+  background-color: #9890fe;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 1.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.625rem;
 }
-.agre_txt{
-	display: flex;
-	flex-wrap: wrap;
-	color:#fff;
-	font-size: 0.625rem;
-	padding-left: 0.46875rem;
+.agre_txt {
+  display: flex;
+  flex-wrap: wrap;
+  color: #fff;
+  font-size: 0.625rem;
+  padding-left: 0.46875rem;
 }
-.agre_circle{
-	width: 0.625rem;
-	height: 0.625rem;
-	border-radius: 50%;
-	border: 1px solid #fff;
-	position: relative;
+.agre_circle {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  position: relative;
 }
-.agre_circle2{
-	width: 0.625rem;
-	height: 0.625rem;
-	border-radius: 50%;
-	border: 1px solid #fff;
-	position: relative;
-	background-color: #fff;
->.icon-check{
-		color: #000;
-		font-weight: bold;
-		position: absolute;
-		left: 50%;
-		top:54%;
-		transform: translate(-50%,-50%);
-		font-size: 0.5625rem;
-		z-index: 2;
+.agre_circle2 {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  position: relative;
+  background-color: #fff;
 }
+.agre_circle2 > .icon-check {
+  color: #000;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  top: 54%;
+  transform: translate(-50%, -50%);
+  font-size: 0.5625rem;
+  z-index: 2;
 }
-.agreement_info{
-	position: relative;
-	padding: 0 0.15625rem;
-	padding-bottom: 0.15625rem;
-&::after{
-		content: '';
-		width: 90%;
-		height: 0.03125rem;
-		background-color: rgba(255,255,255,0.2);
-		position: absolute;
-		left: 50%;
-		bottom: 0;
-		transform: translate(-50%,0);
+.agreement_info {
+  position: relative;
+  padding: 0 0.15625rem;
+  padding-bottom: 0.15625rem;
 }
+.agreement_info::after {
+  content: "";
+  width: 90%;
+  height: 0.03125rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0);
 }
-.login-box{
-		position: relative;
-		height: 100vh;
-		overflow: hidden;
-.video-background{
-			position: absolute;
-			top: 0;
-			right: 0;
-			left: 0;
-			bottom: 0;
-.video{
-				width: 100%;
-				height: 100%;
+.login-box {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
+.login-box .video-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }
+.login-box .video-background .video {
+  width: 100%;
+  height: 100%;
 }

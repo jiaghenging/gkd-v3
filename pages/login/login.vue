@@ -3,10 +3,6 @@
 		<view class="status_bar">
 			<!-- 这里是状态栏 -->
 		</view>
-<!-- 		<view class="fixed-bg">
-			<image src="../../static/img/bg_login.gif" class="bgImg" mode=""></image>
-			
-		</view> -->
 		<view class="login_container">
 			<view class="formBox">
 				<text class="login_title">Hi , 你好啊</text>
@@ -96,8 +92,8 @@
 	const rulesData = ref('');
 
 	const userForm = reactive({
-		userId: '',
-		userPwd: ''
+		userId: 'admin',
+		userPwd: 'admin123'
 	});
 	
 	function toLogin() {
@@ -146,7 +142,7 @@
 		})
 	}
 	const formRef = ref(null);
-	const ifAgree = ref(false);
+	const ifAgree = ref(true);
 
 	function checkForm() {
 		console.log(formRef.value);
@@ -179,6 +175,6 @@
 	})
 </script>
 
-<style>
-	@import url('../../static/css/login/login.scss');
+<style lang="scss">
+	@import '@/static/css/login/login.scss';
 </style>
