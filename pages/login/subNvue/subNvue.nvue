@@ -1,0 +1,55 @@
+<template>
+	<view class="mark" id="subNvue">
+			<view class="formBox">
+				<text class="login_title">Hi , 你好啊</text>
+				<!-- <uni-forms ref="formRef" :modelValue="userForm" :rules="rules" class="login_form">
+					<uni-forms-item name="userId">
+						<view class="inputBox">
+							<input type="text" placeholder="请输入用户名" v-model="userForm.userId"
+								placeholder-class="input_style">
+						</view>
+					</uni-forms-item>
+					<uni-forms-item name="userPwd">
+						<view class="inputBox">
+							<input type="text" placeholder="请输入密码" v-model="userForm.userPwd" password="true"
+								placeholder-class="input_style">
+						</view>
+					</uni-forms-item>
+					<uni-forms-item name="ifAgree">
+						<view class="form_agrement">
+							<view class="checked_box" @tap="ifAgree=!ifAgree">
+								<view class="agre_circle" v-if="ifAgree==false"></view>
+								<view class="agre_circle2" v-else>
+									<text class="iconfont icon-check"></text>
+								</view>
+							</view>
+							<text class="agre_txt">
+								我已阅读并同意
+								<text class="agreement_info" @tap="toAgreement(1)">用户协议</text>
+								及
+								<text class="agreement_info" @tap="toAgreement(2)">隐私政策</text>
+							</text>
+						</view>
+					</uni-forms-item>
+					<uni-forms-item>
+						<view class="login_btn" @tap="checkForm()">登录/注册</view>
+					</uni-forms-item>
+				</uni-forms> -->
+			</view>
+	</view>
+</template>
+
+<script setup>
+	import {
+		onShow,
+		onHide,
+		onLoad
+	} from "@dcloudio/uni-app"
+	onShow(() => {
+		console.log('ssssssssssd');
+	})
+</script>
+
+<style>
+	@import url('../../../static/css/login/sub/subnvue.scss');
+</style>

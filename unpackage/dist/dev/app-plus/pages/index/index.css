@@ -1,0 +1,246 @@
+/* 水平间距 */
+/* 水平间距 */
+.uni-page-head .uni-page-head-ft[data-v-4dd3c44b] {
+  padding: 0 14px !important;
+}
+.uni-popup[data-v-4dd3c44b] {
+  position: fixed;
+  z-index: 99;
+}
+.uni-popup.top[data-v-4dd3c44b], .uni-popup.left[data-v-4dd3c44b], .uni-popup.right[data-v-4dd3c44b] {
+  top: 0;
+}
+.uni-popup .uni-popup__wrapper[data-v-4dd3c44b] {
+  display: block;
+  position: relative;
+  /* iphonex 等安全区设置，底部安全区适配 */
+}
+.uni-popup .uni-popup__wrapper.left[data-v-4dd3c44b], .uni-popup .uni-popup__wrapper.right[data-v-4dd3c44b] {
+  padding-top: 0;
+  flex: 1;
+}
+.fixforpc-z-index[data-v-4dd3c44b] {
+  z-index: 999;
+}
+.fixforpc-top[data-v-4dd3c44b] {
+  top: 0;
+}
+.bgBox {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.bg-img {
+  width: 100%;
+  height: 100%;
+}
+.zzc {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(1.875rem);
+          backdrop-filter: blur(1.875rem);
+  z-index: 1;
+}
+.yuyueListBox {
+  padding: 1.875rem 10% 5rem 10%;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+}
+.yuyueListBox > .yyCard:nth-last-child(1) {
+    margin-bottom: 0;
+}
+.yyCard {
+  width: 80%;
+  padding: 2% 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-bottom: 1.875rem;
+  border-radius: 0.625rem;
+  position: relative;
+  overflow: hidden;
+  border: 0.03125rem solid transparent;
+  box-shadow: rgba(255, 255, 255, 0.8) 0 0.125rem 0.625rem 0;
+  display: flex;
+  flex-direction: column;
+}
+.yyCard_top {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding: 5%;
+}
+.outyyBtn {
+  position: absolute;
+  right: 14%;
+  top: 20%;
+}
+.outyyBtn > uni-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.25rem;
+}
+.yy_master_img {
+  margin-left: -0.15625rem;
+  margin-top: -0.15625rem;
+  width: 2.8125rem;
+  height: 2.8125rem;
+  border-radius: 50%;
+  box-shadow: rgba(255, 255, 255, 0.8) 0 0.125rem 0.625rem 0;
+  position: relative;
+}
+.yy_master_img > uni-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+}
+.master_name {
+  white-space: nowrap;
+  color: #fff;
+  display: inline-block;
+  font-size: 0.625rem;
+  margin-left: 0.9375rem;
+  margin-top: 10%;
+}
+.yyMsgBox {
+  padding: 3% 5% 5% 5%;
+}
+.yymsg_title {
+  color: #fff;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.groupBox {
+  width: 100%;
+  display: flex;
+  padding: 5% 0;
+}
+.groupBox > .group_item {
+    margin-right: 0.8em;
+}
+.groupBox > .group_item:nth-last-child(1) {
+      margin-right: 0;
+}
+.group_item {
+  width: 2.8125rem;
+  height: 2.8125rem;
+  border-radius: 50%;
+  border: 0.03125rem solid #fff;
+  position: relative;
+}
+.joinBtn {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+.joinBtn > .icon-jiahao {
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.25rem;
+}
+.g_item_name {
+  position: absolute;
+  bottom: -1.5625rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.625rem;
+  color: #fff;
+  white-space: nowrap;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.btn_addyy {
+  position: fixed;
+  right: 10%;
+  bottom: 18%;
+}
+.btn_addyy .icon-chuangjian {
+    color: #fff;
+    font-size: 2.5rem;
+}
+.btn_message {
+  position: fixed;
+  right: 10%;
+  bottom: 40%;
+}
+.btn_message .icon-xiaoxi {
+    color: #fff;
+    font-size: 2.5rem;
+}
+.newMsgTip {
+  position: absolute;
+  right: 0;
+  top: -10%;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background-color: #fc5531;
+  font-size: 0.875rem;
+  text-align: center;
+  line-height: 1.25rem;
+  color: #fff;
+}
+.msgListBox {
+  width: 18.75rem;
+  height: 12.5rem;
+  padding: 0.625rem;
+  border-radius: 0.3125rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+.msg_close_btn {
+  width: 1.875rem;
+  height: 1.875rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0.3125rem 0 0.3125rem;
+  color: #fff;
+  font-size: 0.625rem;
+}
+.msgList_content {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.msgList_item {
+  display: inline-flex;
+  align-items: center;
+  color: #fff;
+  padding: 0.5625rem 0.625rem;
+  margin-bottom: 0.625rem;
+  border-radius: 0.9375rem;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.msgList_item .icon-guanbi {
+    margin-left: 0.3125rem;
+}

@@ -3,10 +3,10 @@
 		<view class="status_bar">
 			<!-- 这里是状态栏 -->
 		</view>
-		<view class="fixed-bg">
-			<video id="homevideo" :ref="videoRef" object-fit="cover" :autoplay="true" loop="loop" :muted="true"
-				src="../../static/img/bg_login.mp4" :controls="false" class="fixed-video"></video>
-		</view>
+<!-- 		<view class="fixed-bg">
+			<image src="../../static/img/bg_login.gif" class="bgImg" mode=""></image>
+			
+		</view> -->
 		<view class="login_container">
 			<view class="formBox">
 				<text class="login_title">Hi , 你好啊</text>
@@ -101,6 +101,7 @@
 	});
 	
 	function toLogin() {
+		console.log('ssss');
 		let data = {
 			userid: userForm.userId,
 			userpwd: userForm.userPwd,
@@ -108,18 +109,25 @@
 		};
 		login(data).then(res => {
 			console.log(res);
-			if (res.data.state == 0) {
+			if (res.state == 0) {
 				uni.showToast({
 					title: '登录成功',
 					duration: 1500,
 					icon: 'none'
 				});
 				let userMsg = {
-					userid: res.data.userid,
-					username: res.data.username,
-					yystate: res.data.yystate,
-					token: res.data.token
+					userid: res.userid,
+					username: res.username,
+					yystate: res.yystate,
+					token: res.token
 				}
+				uni.setStorage({
+					key: 'Authorization',
+					data: res.token,
+					success() {
+						console.log('成功保存');
+					}
+				})
 				uni.setStorage({
 					key: 'user_msg',
 					data: userMsg,
@@ -134,7 +142,7 @@
 
 			}
 		}).catch(err => {
-			login(err)
+			console.log(err);
 		})
 	}
 	const formRef = ref(null);
@@ -172,5 +180,5 @@
 </script>
 
 <style>
-	@import url('../../static/css/login/login.css');
+	@import url('../../static/css/login/login.scss');
 </style>

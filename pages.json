@@ -1,29 +1,27 @@
 {
-	"pages": [
-		{
+	"pages": [{
 			"path": "pages/login/login",
 			"style": {
-				"navigationStyle":"custom"
+				"navigationStyle": "custom"
 			}
-		},{
+		}, {
 			"path": "pages/index/index",
 			"style": {
-				"navigationStyle":"custom"
+				"navigationStyle": "custom"
 			}
-			
 		},
 		{
 			"path": "pages/user/userinfo",
 			"style": {
-				"navigationStyle":"custom"
+				"navigationStyle": "custom"
 			}
 		},
 		{
 			"path": "pages/index/addyuyue",
 			"style": {
-				"navigationBarBackgroundColor":"#000",
-				"navigationBarTextStyle":"white",
-				"navigationBarTitleText":"创建预约",
+				"navigationBarBackgroundColor": "#000",
+				"navigationBarTextStyle": "white",
+				"navigationBarTitleText": "创建预约",
 				"app-plus": {
 					"titleNView": {
 						"buttons": [{
@@ -35,7 +33,7 @@
 					}
 				}
 			}
-			
+
 		}
 	],
 	"globalStyle": {
@@ -57,12 +55,11 @@
 			"text": "首页",
 			"iconPath": "static/img/icon/qz0.png",
 			"selectedIconPath": "static/img/icon/qz1.png"
-		},{
+		}, {
 			"pagePath": "pages/user/userinfo", //企业分析
 			"text": "我的",
 			"iconPath": "static/img/icon/gr0.png",
 			"selectedIconPath": "static/img/icon/gr1.png"
-		}
-		]
+		}]
 	}
 }

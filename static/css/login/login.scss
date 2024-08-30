@@ -1,3 +1,26 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* 让容器充满整个视口 */
+  overflow: hidden; /* 隐藏视频溢出部分 */
+  flex: 1;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 让视频铺满整个容器 */
+  z-index: -1; /* 将视频放到背景，-1是为了让表单位于视频上面 */
+}
+
+.login-form {
+  position: relative; /* 默认即可，因为表单在文档流中 */
+  z-index: 1; /* 确保表单位于视频上面 */
+  /* 可以根据需要添加表单的样式 */
+}
 .status_bar {
 		height: var(--status-bar-height);
 		width: 100%;
@@ -8,6 +31,11 @@
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+	background-color: #000;
+}
+.bgImg{
+	width: 100%;
+	height: auto;
 }
 .fixed-bg{
 	position: fixed;
@@ -20,12 +48,19 @@
 .fixed-video{
 	width: 100%;
 	height: 100%;
+	
 }
 .login_container{
-	position: relative;
+	position: fixed;
+	background-image: url('../../img/bg_login.gif');
+	background-size: contain; /* 或 background-size: auto; */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	left: 0;
+	top: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 1;
+	z-index: 899;
 }
 
 .formBox{
@@ -79,6 +114,8 @@
 	
 }
 .agre_txt{
+	display: flex;
+	flex-wrap: wrap;
 	color:#fff;
 	font-size: 20rpx;
 	padding-left: 15rpx;
@@ -124,3 +161,19 @@
 		transform: translate(-50%,0);
 	}
 }
+.login-box{
+		position: relative;
+		height: 100vh;
+		overflow: hidden;
+		.video-background{
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			.video{
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}

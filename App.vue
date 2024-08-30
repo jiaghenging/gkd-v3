@@ -1,8 +1,6 @@
 <script>
 	export default {
 		globalData: {
-		    // baseUrl:'http://192.168.2.68:2300/',
-			baseUrl:'http://218.6.173.71:2312/',
 			userMsg:{
 				userid:'',
 				username:'',
