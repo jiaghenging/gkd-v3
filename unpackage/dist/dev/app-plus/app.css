@@ -4,9 +4,9 @@
 /* 水平间距 */
 @font-face {
   font-family: "iconfont"; /* Project id 3938872 */
-  src: url('static/css/iconfonts/iconfont.woff2?t=1725010983473') format('woff2'),
-       url('static/css/iconfonts/iconfont.woff?t=1725010983473') format('woff'),
-       url('static/css/iconfonts/iconfont.ttf?t=1725010983473') format('truetype');
+  src: url('static/css/iconfonts/iconfont.woff2?t=1725266347191') format('woff2'),
+       url('static/css/iconfonts/iconfont.woff?t=1725266347191') format('woff'),
+       url('static/css/iconfonts/iconfont.ttf?t=1725266347191') format('truetype');
 }
 .iconfont {
   font-family: "iconfont" !important;
@@ -14,6 +14,9 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.icon-shezhi:before {
+  content: "\e8b8";
 }
 .icon-guanbi:before {
   content: "\eaf2";
@@ -46,6 +49,46 @@
 }
 .formBox_yy .uni-forms-item__error {
   left: 0;
+}
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.bgBox {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.zzc {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(1.875rem);
+          backdrop-filter: blur(1.875rem);
+  z-index: 1;
+}
+.bg-img {
+  width: 100%;
+  height: 100%;
+}
+.text-center {
+  text-align: center;
+}
+.flex {
+  display: flex;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /*每个页面公共css */
 uni-page-body, body {

@@ -6,6 +6,13 @@
   "description": "搞快点app",
   "glyphs": [
     {
+      "icon_id": "1727422",
+      "name": "205设置",
+      "font_class": "shezhi",
+      "unicode": "e8b8",
+      "unicode_decimal": 59576
+    },
+    {
       "icon_id": "5387522",
       "name": "关闭",
       "font_class": "guanbi",

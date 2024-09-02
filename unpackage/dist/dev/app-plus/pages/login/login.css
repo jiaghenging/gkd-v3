@@ -102,6 +102,13 @@
 .uni-page-head .uni-page-head-ft {
   padding: 0 14px !important;
 }
+.content_login {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #000;
+}
 .container {
   position: relative;
   width: 100%;
@@ -128,13 +135,6 @@
   z-index: 1;
   /* 确保表单位于视频上面 */
   /* 可以根据需要添加表单的样式 */
-}
-.content {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: #000;
 }
 .bgImg {
   width: 100%;

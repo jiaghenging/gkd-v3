@@ -1,5 +1,5 @@
 <template>
-	<view class="content">
+	<view class="content_login">
 		<view class="status_bar">
 			<!-- 这里是状态栏 -->
 		</view>
@@ -28,6 +28,7 @@
 								</view>
 							</view>
 							<text class="agre_txt">
+								
 								我已阅读并同意
 								<text class="agreement_info" @tap="toAgreement(1)">用户协议</text>
 								及

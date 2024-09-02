@@ -1,3 +1,10 @@
+.content_login{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: #000;
+}
 .container {
   position: relative;
   width: 100%;
@@ -20,14 +27,6 @@
   position: relative; /* 默认即可，因为表单在文档流中 */
   z-index: 1; /* 确保表单位于视频上面 */
   /* 可以根据需要添加表单的样式 */
-}
-
-.content{
-	position: relative;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	background-color: #000;
 }
 
 .bgImg{
